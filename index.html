@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Debugger Bot</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Highlight.js for Code Syntax -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark-dimmed.min.css">
+    <!-- Marked.js for Markdown Parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.3/purify.min.js"></script>
+    
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar / Settings -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fa-solid fa-bug-slash"></i>
+                    <h2>CodeFixer</h2>
+                </div>
+                <p class="subtitle">AI Debugging Assistant</p>
+            </div>
+            
+            <div class="settings-panel">
+                <h3>Settings</h3>
+                <div class="input-group">
+                    <label for="api-key"><i class="fa-solid fa-key"></i> Google Gemini API Key</label>
+                    <input type="password" id="api-key" placeholder="AIza..." autocomplete="off">
+                    <p class="help-text">Your key is stored locally in your browser.</p>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <button id="clear-chat-btn" class="btn secondary">
+                    <i class="fa-solid fa-trash-can"></i> Clear Chat
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-container">
+            <header class="chat-header">
+                <div>
+                    <h1>Debug Session</h1>
+                    <span class="status-indicator"><span class="dot"></span> System Ready</span>
+                </div>
+            </header>
+
+            <div class="chat-box" id="chat-box">
+                <!-- Welcome Message -->
+                <div class="message bot intro-message">
+                    <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+                    <div class="message-content">
+                        <h3>Welcome to CodeFixer! 🚀</h3>
+                        <p>I am your expert AI debugging assistant. I can help you find bugs, explain errors, and rewrite your code with best practices.</p>
+                        <p><strong>To get started:</strong></p>
+                        <ul>
+                            <li>Enter your Google Gemini API key in the sidebar.</li>
+                            <li>Paste the code or the error message you're struggling with.</li>
+                            <li>Add any context about what the code is supposed to do.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <div class="input-wrapper">
+                    <textarea id="user-input" placeholder="Paste your code or describe the error here... (Shift+Enter for new line)" rows="1"></textarea>
+                    <button id="send-btn" class="btn primary" title="Send (Enter)">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
