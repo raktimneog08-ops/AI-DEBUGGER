@@ -1,1 +1,0 @@
-AI Debugger is an intelligent debugging assistant that leverages the Google Gemini API to analyze, identify, and suggest fixes for code errors. Built with a clean HTML frontend and a robust Python backend, it provides real-time debugging support for developers seeking rapid, AI-driven solutions
